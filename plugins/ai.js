@@ -117,7 +117,7 @@ System({
 });
 
 System({
-    pattern: 'gemini ?(.*)',
+    pattern: 'gem ?(.*)',
     fromMe: isPrivate,
     desc: 'Chat with gemini ai',
     type: 'ai',
