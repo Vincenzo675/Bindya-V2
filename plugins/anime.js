@@ -40,7 +40,7 @@ System({
     desc: 'Get details of an anime',
     type: 'anime',
 }, async (message, match, m) => {
-    if (!match) return await message.send("*Need an anime name*\n_Example: .anime Future Diary_");
+    if (!match) return await message.send("*Need an anime name*\n_Example: .anime Attack on Titan_");
     var anime = encodeURI(match);
     var res = await fetch(IronMan(`ironman/s/anime?anime=${anime}`));
     if (!res.ok) return await message.send("*Not Found*\nCheck if the anime name is correct");
@@ -65,7 +65,7 @@ System({
     var Cover = data.Low_Cover;
     var pimage = await getBuffer(Cover);
     var YouTube = data.YouTube;
-    var link = "https://github.com/Loki-Xer/Jarvis-md";
+    var link = "https://github.com/Vincenzo675/Bindya-V2";
     var caption = `➥ *ɴᴀᴍᴇ:* ${Romaji}\n✰ *ᴛʏᴘᴇ:* ${ShowType}\n✰ *ꜱᴜʙᴛʏᴘᴇ:* ${Subtype}\n✰ *ꜱᴛᴀᴛᴜꜱ:* ${Status}\n✰ *ʀᴇʟᴇᴀꜱᴇᴅ:* ${Released}\n✰ *ᴇɴᴅᴇᴅ:* ${Ended}\n✰ *ᴇᴘɪꜱᴏᴅᴇꜱ:* ${Episodes}\n✰ *ᴛᴏᴛᴀʟ ʟᴇɴɢᴛʜ:* ${TotalLength}\n✰ *ᴇᴘɪꜱᴏᴅᴇ ʟᴇɴɢᴛʜ:* ${EpisodeLength}\n✰ *ᴀɢᴇ ʀᴀᴛɪɴɢ:* ${AgeRating}\n✰ *ᴘᴏᴘᴜʟᴀʀɪᴛʏ:* ${Popularity}\n✰ *ʀᴀᴛɪɴɢ:* ${Rating}\n✰ *ɴꜱꜰᴡ:* ${NSFW}\n✰ *ꜱᴜᴍᴍᴀʀʏ:* ${Summary}\n➥ *ᴛʀᴀɪʟᴇʀ:* https://youtube.com/watch?v=${YouTube}\n`;
     var linkPrev = { title: Etitle, body: Japanese, thumbnail: pimage, mediaType: 1, mediaUrl: link, sourceUrl: link, showAdAttribution: false, renderLargerThumbnail: true };
     await message.client.sendMessage(message.chat, { image: { url: Poster }, caption, contextInfo: { externalAdReply: linkPrev } }, { quoted: message });
