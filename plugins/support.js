@@ -15,13 +15,13 @@ const { getJson, getBuffer, System, isPrivate, sleep } = require("../lib/");
 System({
     pattern: "help",
     fromMe: isPrivate,
-    desc: "jarvis-md support",
+    desc: "𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪★ support",
     type: "support"
 }, async (message) => {
-    const name = 'ɪʀᴏɴ ᴍᴀɴ 🎓', title = "ᴊᴀʀᴠɪꜱ ꜱᴜᴩᴩᴏʀᴛ 🪄", number = '4915252819677', body = "ɪʀᴏɴ ᴍᴀɴ";
-    const image = "https://graph.org/file/58ea74675af7836579a3a.jpg", sourceUrl = 'https://github.com/Loki-Xer/Jarvis-md';
+    const name = '~V i Nㄷㅌ🎓', title = "𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪★ ꜱᴜᴩᴩᴏʀᴛ 🪄", number = '918787487369', body = "V i Nㄷㅌ";
+    const image = "https://cdn.ironman.my.id/i/195mv0.jpeg", sourceUrl = 'https://github.com/Vincenzo675/Jarvis';
     const logo = await getBuffer(image);
-    const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nORG: powered by Jarvis-md;\nTEL;type=CELL;type=VOICE;waid=${number}:${number}\nEND:VCARD`;
+    const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nORG: powered by 𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪★;\nTEL;type=CELL;type=VOICE;waid=${number}:${number}\nEND:VCARD`;
     const adon = { title, body, thumbnail: logo, mediaType: 1, mediaUrl: sourceUrl, sourceUrl, showAdAttribution: true, renderLargerThumbnail: false };
     await message.client.sendMessage(message.chat, { contacts: { displayName: name, contacts: [{ vcard }] }, contextInfo: { externalAdReply: adon } }, { quoted: message });
 });
@@ -29,12 +29,12 @@ System({
 System({
     pattern: "allplugin",
     fromMe: isPrivate,
-    desc: "To get all plugin of jarvis-md",
+    desc: "To get all plugin of 𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪",
     type: "support"
 }, async (message) => {
     const allPluginsData = await getJson('https://api-loki-ser-1o2h.onrender.com/api/jarvis/allplugin');
     const externalPluginsData = await getJson('https://api-loki-ser-1o2h.onrender.com/api/jarvis/plugin');
-    const image = await getBuffer("https://graph.org/file/30ab5e1e228a9636ce7f5.jpg");
+    const image = await getBuffer("https://cdn.ironman.my.id/i/195mv0.jpeg");
     const formatPluginData = (pluginData) => {
         return Object.entries(pluginData).map(([key, value]) => `*${key}:* ${value.url}`).join('\n\n');
     };
