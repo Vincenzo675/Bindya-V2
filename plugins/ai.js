@@ -126,7 +126,7 @@ System({
     if (match && m.quoted) match = message.reply_message.text + '\n' + match;   
     if (!match) return m.reply("_*Need Query !!*_\n_*eg: .gemini who is iron man?*_");  
     const { content } = await postJson(`https://ronak-api.onrender.com/ronak/gemini`, { prompt: match });
-    await m.send(content, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363197401188542@newsletter', newsletterName: 'ɢᴇᴍɪɴɪ ᴀɪ' }}});
+    await m.send(content, { contextInfo: { forwardingScore: 1, isForwarded: false, forwardedNewsletterMessageInfo: { newsletterJid: '120363197401188542@newsletter', newsletterName: 'ɢᴇᴍɪɴɪ ᴀɪ' }}});
 });
 
 System({
