@@ -78,7 +78,7 @@ System({
   type: 'download',
 }, async (message, match, m) => {
   const appId = match;
-  if (!appId) return await message.reply('*Nᴇᴇᴅ ᴀɴ ᴀᴘᴘ ɴᴀᴍᴇ*\n*Exᴀᴍᴘʟᴇ: ꜰʀᴇᴇ ꜰɪʀᴇ*');
+  if (!appId) return await message.reply('*Nᴇᴇᴅ ᴀɴ ᴀᴘᴘ ɴᴀᴍᴇ*\n*Exᴀᴍᴘʟᴇ: MLBB*');
 
   const appInfo = await aptoideDl(appId);
   await message.client.sendMessage(message.chat, {
@@ -153,7 +153,7 @@ System({
     if (!result) return await message.send("Not Found");
     if (result.length === 1) return await message.sendFromUrl(result[0]);
     const options = result.map((u, index) => ({ name: "quick_reply", display_text: `${index + 1}/${result.length}`, id: `story dl-url ${u}` }));
-    return await message.send(options, { body: "", footer: "*JARVIS-MD*", title: "*Insta Media Downloader_*\n" }, "button");
+    return await message.send(options, { body: "", footer: "*𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪*", title: "*Insta Media Downloader_*\n" }, "button");
   }
   const url = await extractUrlFromMessage(match);
   if (!isInstaUrl(url)) return message.reply("_*Provide a valid Instagram story URL*_");
@@ -161,7 +161,7 @@ System({
   if (!result) return await message.send("Not Found");
   if (result.length === 1) return await message.sendFromUrl(result[0].download_link);
   const options = result.map((u, index) => ({ name: "quick_reply", display_text: `${index + 1}/${result.length}`, id: `story dl-url ${u.download_link}` }));
-  await message.send(options, { body: "", footer: "*JARVIS-MD*", title: "*Insta Media Downloader_*\n" }, "button");
+  await message.send(options, { body: "", footer: "*𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪*", title: "*Insta Media Downloader_*\n" }, "button");
 });
 
 System({
@@ -183,7 +183,7 @@ System({
       contextInfo: {
         externalAdReply: {
           title: response.title,
-          body: 'ᴊᴀʀᴠɪꜱ-ᴍᴅ',
+          body: '𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪',
           thumbnail: img,
           mediaType: 1,
           mediaUrl: url,
@@ -213,7 +213,7 @@ System({
 });
 
 System ({
-    pattern: 'gitdl ?(.*)',
+    pattern: 'gitdow ?(.*)',
     fromMe: isPrivate,
     desc: 'Repository Downloader',
     type: 'download',
@@ -323,7 +323,7 @@ System({
           thumbnail: img,
           mediaType: 1,
           mediaUrl: '',
-          sourceUrl: 'https://github.com/Loki-Xer/Jarvis-md',
+          sourceUrl: 'https://github.com/Vincenzo675/Bindya-V2',
           showAdAttribution: true,
           renderLargerThumbnail: true
         }
