@@ -21,7 +21,7 @@ System({
     type: "server",
     desc: "shutdown bot",
 }, async (message) => {
-    await message.reply(`_Jarvis is shutting down..._`);
+    await message.reply(`_𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪 is shutting down..._`);
     return await shell("npm stop");
 });
 
