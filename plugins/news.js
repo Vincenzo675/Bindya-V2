@@ -33,7 +33,7 @@ System({
     }
   ], {
     body: formattedList,
-    footer: "*JARVIS-MD*",
+    footer: "*𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪*",
     title: "Top 5 News"
   }, "button");
 });
