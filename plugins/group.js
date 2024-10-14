@@ -184,7 +184,7 @@ System({
     if (!message.isGroup) return;   
     const { participants } = await message.client.groupMetadata(message.from).catch(e => {});
     let admins = await participants.filter(v => v.admin !== null).map(v => v.id);
-    let msg = "〘      *𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪*     〙                             ";
+    let msg = "〘      *𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪*     〙                                                                            ";
     if (match === "all" || match === "everyone") {
         for (let i = 0; i < participants.length; i++) {
             msg += `${i + 1}. @${participants[i].id.split('@')[0]}\n`;
