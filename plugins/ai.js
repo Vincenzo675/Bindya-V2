@@ -31,7 +31,7 @@ System({
     if(match && m.quoted) match = match + m.reply_message.text;
     if(!match) return m.reply("_*need query !!*_\n_*eg: .thinkany who is Eren Yeager*_");
     const { result } = await interactWithAi("thinkany", match);
-    await m.send(result, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ Tʜɪɴᴋᴀɴʏ ᴀɪ' }}});
+    await m.send(result, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Tʜɪɴᴋᴀɴʏ ᴀɪ' }}});
 });
 
 System({
@@ -44,7 +44,7 @@ System({
     if(match && m.quoted) match = match + m.reply_message.text;
     if(!match) return m.reply("_*need query !!*_\n_*eg: .aoyo who is iron man*_");
     const { result } = await interactWithAi("aoyo", match);
-    await m.send(result, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ ᴀᴏʏᴏ ᴀɪ' }}});
+    await m.send(result, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'ᴀᴏʏᴏ ᴀɪ' }}});
 });
 
 System({
@@ -58,7 +58,7 @@ System({
     if(!match) return m.reply("_*need query !!*_\n_*eg: .prodia a girl in full moon*_");
     await m.reply("*please wait generating*");
     const img = await interactWithAi("prodia", match);
-    await m.sendFromUrl(img, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ ᴩʀᴏᴅɪᴀ ᴀɪ' }}});
+    await m.sendFromUrl(img, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'ᴩʀᴏᴅɪᴀ ᴀɪ' }}});
 });
 
 
@@ -73,7 +73,7 @@ System({
     if(!match) return m.reply("_*need query !!*_\n_*eg: .dalle a girl in full moon*_");
     await m.reply("*please wait generating*");
     const img = await interactWithAi("dalle", match);
-    await m.sendFromUrl(img, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ ᴅᴀʟʟᴇ ᴀɪ' }}});
+    await m.sendFromUrl(img, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'ᴅᴀʟʟᴇ ᴀɪ' }}});
 });
 
 
@@ -87,7 +87,7 @@ System({
     if(match && m.quoted) match = match + m.reply_message.text;
     if(!match) return m.reply("_*need query !!*_\n_*eg: .lepton who is iron man*_");
     const { result } = await interactWithAi("lepton", match);
-    await m.send(result.replace(/\[[^\]]*\]|\([^)]*\)|<[^>]*>/g, ''), { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ ʟᴇᴩᴛᴏɴ ᴀɪ' }}});
+    await m.send(result.replace(/\[[^\]]*\]|\([^)]*\)|<[^>]*>/g, ''), { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'ʟᴇᴩᴛᴏɴ ᴀɪ' }}});
 });
 
 System({
@@ -100,7 +100,7 @@ System({
     if(match && m.quoted) match = match + m.reply_message.text;
     if(!match) return m.reply("_*need query !!*_\n_*eg: .chatgpt who is iron man*_");
     const { response } = await interactWithAi("gpt", match);
-    await m.send(response, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ AI' }}});
+    await m.send(response, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ' }}});
 });
 
 System({
@@ -113,7 +113,7 @@ System({
        if(match && m.quoted) match = match + m.reply_message.text;
        if(!match) return m.reply("_*need query !!*_\n_*eg: .bb who is iron man*_");
        const { result } = await interactWithAi("blackbox", match);
-       await m.send(result, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ ʙʟᴀᴄᴋ ʙᴏx' }}});
+       await m.send(result, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'ʙʟᴀᴄᴋ ʙᴏx' }}});
 });
 
 System({
@@ -126,7 +126,7 @@ System({
     if (match && m.quoted) match = message.reply_message.text + '\n' + match;   
     if (!match) return m.reply("_*Need Query !!*_\n_*eg: .gemini who is iron man?*_");  
     const { content } = await postJson(`https://ronak-api.onrender.com/ronak/gemini`, { prompt: match });
-    await m.send(content, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ ɢᴇᴍɪɴɪ ᴀɪ' }}});
+    await m.send(content, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'ɢᴇᴍɪɴɪ ᴀɪ' }}});
 });
 
 System({
@@ -139,7 +139,7 @@ System({
     if(match && m.quoted) match = match + m.reply_message.text;
     if(!match) return m.reply("_*need query !!*_\n_*eg: .chatgpt who is iron man*_");
     const response = await interactWithAi("chatgpt", match);
-    await m.send(response, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'Qᴜᴇᴇɴ Bɪɴᴅʏᴀ ᴄʜᴀᴛɢᴩᴛ' }}});
+    await m.send(response, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'ᴄʜᴀᴛɢᴩᴛ' }}});
 });
 
 System({
