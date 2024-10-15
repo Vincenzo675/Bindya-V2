@@ -1,8 +1,8 @@
-#### JARVIS MD WHATSAPP BOT
-jarvis md is Multi Device whatsapp bot
+#### Bindya-V2 WHATSAPP BOT
+Bindya-V2 is Multi Device whatsapp bot
 ***
 
-### SETUP JARVIS
+### SETUP Bindya-V2
 
 1. Scan the QR code
     <br>
@@ -85,17 +85,17 @@ jarvis md is Multi Device whatsapp bot
 #### THANKS TO
 - [INRL ❤️](https://github.com/inrl-official) <br>
 
-#### JARVIS SUPPORT 
+#### Bindya-V2 SUPPORT 
 
 
 <details close>
 <summary>Read More</summary>
     <br>
-<a href="https://whatsapp.com/channel/0029Va9dOax4o7qDb6pVvp34"><img alt="WhatsApp" src="https://img.shields.io/badge/-Whatsapp%20Channel-white?style=for-the-badge&logo=whatsapp&logoColor=black"/></a>
+<a href="https://whatsapp.com/channel/0029VarkfOSLikgHhXPsnA2B"><img alt="WhatsApp" src="https://img.shields.io/badge/-Whatsapp%20Channel-white?style=for-the-badge&logo=whatsapp&logoColor=black"/></a>
     <br>
 <br>
-<a href="https://chat.whatsapp.com/HCRUrl9kCvEL6v7OhmG5BR"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+<a href="https://wa.me/918787487369"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
     <br>
 <br>
-<a href='https://github.com/IRON-M4N/Jarvis-MD-Plugins' target="_blank"><img alt='jarvis-md' src='https://img.shields.io/badge/EXPLUGIN-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/IRON-M4N/Jarvis-MD-Plugins' target="_blank"><img alt='Bindya-V2' src='https://img.shields.io/badge/EXPLUGIN-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
