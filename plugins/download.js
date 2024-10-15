@@ -62,7 +62,7 @@ System({
   type: 'download',
 }, async (message, match, m) => {
   const appId = match;
-  if (!appId) return await message.reply('*Nᴇᴇᴅ ᴀɴ ᴀᴘᴘ ɴᴀᴍᴇ*\n*Exᴀᴍᴘʟᴇ: ꜰʀᴇᴇ ꜰɪʀᴇ*');
+  if (!appId) return await message.reply('*Nᴇᴇᴅ ᴀɴ ᴀᴘᴘ ɴᴀᴍᴇ*\n*Exᴀᴍᴘʟᴇ: MLBB*');
   const appInfo = await aptoideDl(appId);
   await message.client.sendMessage(message.chat, {
     document: {
@@ -165,7 +165,7 @@ System({
       contextInfo: {
         externalAdReply: {
           title: response.title,
-          body: 'ᴊᴀʀᴠɪꜱ-ᴍᴅ',
+          body: '𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪',
           thumbnail: img,
           mediaType: 1,
           mediaUrl: url,
@@ -304,7 +304,7 @@ System({
           thumbnail: img,
           mediaType: 1,
           mediaUrl: '',
-          sourceUrl: 'https://github.com/Loki-Xer/Jarvis-md',
+          sourceUrl: 'https://github.com/Vincenzo675/Bindya-V2',
           showAdAttribution: true,
           renderLargerThumbnail: true
         }
