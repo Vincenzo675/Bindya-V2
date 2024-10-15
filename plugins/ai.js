@@ -100,7 +100,7 @@ System({
     if(match && m.quoted) match = match + m.reply_message.text;
     if(!match) return m.reply("_*need query !!*_\n_*eg: .chatgpt who is iron man*_");
     const { response } = await interactWithAi("gpt", match);
-    await m.send(response, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: 'gpt 4' }}});
+    await m.send(response, { contextInfo: { forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363328568432738@newsletter', newsletterName: '𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪 AI' }}});
 })
 
 System({
