@@ -19,7 +19,7 @@ System({
     type: "support"
 }, async (message) => {
     const name = '~V i Nㄷㅌ🎓', title = "𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪 ꜱᴜᴩᴩᴏʀᴛ 🪄", number = '918787487369', body = "V i Nㄷㅌ";
-    const image = "https://cdn.ironman.my.id/i/195mv0.jpeg", sourceUrl = 'https://wa.me/918787487369';
+    const image = "https://cdn.ironman.my.id/i/195mv0.jpeg", sourceUrl = 'https://wa.me/918787487369?text=_៚please help me sir!_';
     const logo = await getBuffer(image);
     const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nORG: powered by 𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪;\nTEL;type=CELL;type=VOICE;waid=${number}:${number}\nEND:VCARD`;
     const adon = { title, body, thumbnail: logo, mediaType: 1, mediaUrl: sourceUrl, sourceUrl, showAdAttribution: true, renderLargerThumbnail: false };
