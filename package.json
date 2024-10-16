@@ -1,11 +1,11 @@
 {
-    "name": "Jarvis-md",
+    "name": "Bindya-V2",
     "version": "2.0.1",
     "description": "A simple WhatsApp Bot Based On WhiskeySockets/Baileys",
     "main": "index.js",
     "scripts": {
-        "start": "pm2 start . --attach --name Jarvis-md",
-        "stop": "pm2 stop Jarvis-md",
+        "start": "pm2 start . --attach --name Bindya-V2",
+        "stop": "pm2 stop Bindya-V2",
         "postinstall": "yarn global add pm2"
     },
     "engines": {
