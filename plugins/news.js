@@ -34,7 +34,7 @@ System({
     }
   ], {
     body: formattedList,
-    footer: "*JARVIS-MD*",
+    footer: "*𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪*",
     title: "Top 5 News"
   }, "button");
 });
@@ -99,7 +99,7 @@ System({
   await message.send(newsItem.image, {
     value: [{ name: "quick_reply", display_text: "next", id: `technews ${match}`, style: "reply" }],
     body: `*TITLE:* ${newsItem.title}\n*LINK:* ${newsItem.link}`,
-    footer: "*JARVIS-MD*",
+    footer: "*𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪*",
     title: "*TOP TECH NEWS*",
     type: "image"
   }, "button");
