@@ -1,4 +1,4 @@
-import { Chess } from 'chess.js'
+const { System, isPrivate } = require('../lib/');
 
 const handler = async (m, { conn, args }) => {
   const key = m.chat
