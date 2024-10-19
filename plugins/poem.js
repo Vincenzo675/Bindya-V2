@@ -67,7 +67,9 @@ System({
     const titles = Object.keys(poemCollection);
     
     if (titles.length > 0) {
-        await message.send(`Available poems: ${titles.join(', ')}`);
+        // Formatting the response like a bulletin ~V i Nㄷㅌ
+        const bulletin = titles.map((title, index) => `\n${index + 1}. ${title.charAt(0).toUpperCase() + title.slice(1)}`).join('');
+        await message.send(`*Available Poems:*${bulletin}`);
     } else {
         await message.send('No poems have been added yet.');
     }
