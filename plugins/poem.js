@@ -1,4 +1,4 @@
-//Queen Bindya - by ~V i Nㄷㅌ
+//Queen Bindya - by ~V i Nㄷㅌ©
 const { System, isPrivate } = require('../lib/');
 const fs = require('fs');
 const filePath = './poems.json'; // Path to store the poems
