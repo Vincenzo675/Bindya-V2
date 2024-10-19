@@ -51,7 +51,7 @@ System({
     
     if (poem) {
         const footer = "\n\n*~V i Nㄷㅌ*";
-        await message.send(` "*${title}*":\n\n${poem}${footer}`);
+        await message.send(` "*${title}*"\n\n${poem}${footer}`);
     } else {
         await message.send(`Poem titled "${title}" not found.`);
     }
