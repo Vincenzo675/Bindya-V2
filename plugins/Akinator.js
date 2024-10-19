@@ -4,8 +4,12 @@ import { System, isPrivate } from '../lib/'; // Import your main functions
 const handler = async (m, { conn, usedPrefix, command, text }) => {
     if (m.isGroup) return; // Ensure the command can only be used in private chats
 
-    let aki = db.data.users[m.sender].akinator || {}; // Initialize Akinator session data if it doesn't exist
-    if (!db.data.users[m.sender].akinator) db.data.users[m.sender].akinator = {};
+    // Initialize Akinator session data if it doesn't exist
+    if (!db.data.users[m.sender]) {
+        db.data.users[m.sender] = { akinator: {} };
+    }
+    
+    let aki = db.data.users[m.sender].akinator;
 
     if (text === "end") {
         // Handle ending the Akinator session
@@ -19,20 +23,22 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
         
         try {
             // Start a new Akinator session
-            let res = await fetch(`https://api.lolhuman.xyz/api/akinator/start?apikey=${Object.entries(APIKeys).find(([key]) => key.includes("lolhuman"))?.[1]}`);
+            const apiKey = Object.entries(APIKeys).find(([key]) => key.includes("lolhuman"))?.[1];
+            if (!apiKey) throw new Error("API key not found");
+
+            let res = await fetch(`https://api.lolhuman.xyz/api/akinator/start?apikey=${apiKey}`);
             let anu = await res.json();
-            if (anu.status !== 200) throw new Error("Error"); // Check for successful response
+
+            if (anu.status !== 200) throw new Error("Error: Unable to start session");
 
             // Destructure response
-            let { server, frontaddr, session, signature, question, progression, step } = anu.result;
+            let { server, frontaddr, session, signature, question } = anu.result;
             aki.sesi = true; // Start the session
             aki.server = server;
             aki.frontaddr = frontaddr;
             aki.session = session;
             aki.signature = signature;
             aki.question = question;
-            aki.progression = progression;
-            aki.step = step;
 
             // Prepare the message to send
             let txt = `🎮 *Akinator (V2)* 🎮\n\n@${m.sender.split("@")[0]}\n${question}\n\n`;
@@ -47,8 +53,8 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
             aki.soal = soal; // Store the question for future reference
 
         } catch (e) {
-            console.log(e); // Log any errors
-            return m.reply("Feature Error!");
+            console.log(e); // Log any errors for debugging
+            return m.reply("Feature Error! Please try again later.");
         }
     }
 };
