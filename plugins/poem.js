@@ -1,11 +1,26 @@
 //Queen Bindya - by ~V i Nㄷㅌ
-
-
-
 const { System, isPrivate } = require('../lib/');
+const fs = require('fs');
+const filePath = './poems.json'; // Path to store the poems
 
-let poemCollection = {};
+// Function to load poems from the file ~V i Nㄷㅌ
+function loadPoems() {
+    if (fs.existsSync(filePath)) {
+        const data = fs.readFileSync(filePath);
+        return JSON.parse(data);
+    }
+    return {};
+}
 
+// Function to save poems to the file ~V i Nㄷㅌ
+function savePoems(poems) {
+    fs.writeFileSync(filePath, JSON.stringify(poems, null, 2));
+}
+
+// Initialize poem collection from the file ~V i Nㄷㅌ
+let poemCollection = loadPoems();
+
+// Add Poem Function ~V i Nㄷㅌ
 System({
     pattern: 'addpoem ?(.*)',
     fromMe: isPrivate,
@@ -19,10 +34,12 @@ System({
         await message.send('Please use the format: addpoem <title>: <poem content>');
     } else {
         poemCollection[title.trim().toLowerCase()] = content;
+        savePoems(poemCollection); // Save the updated poems to file
         await message.send(`Poem titled "${title.trim()}" added successfully.`);
     }
 });
 
+// Get Poem Function ~V i Nㄷㅌ
 System({
     pattern: 'getpoem ?(.*)',
     fromMe: isPrivate,
@@ -34,12 +51,13 @@ System({
     
     if (poem) {
         const footer = "\n\n*~V i Nㄷㅌ*";
-        await message.send(`"*${title}*":\n\n${poem}${footer}`);
+        await message.send(` "*${title}*":\n\n${poem}${footer}`);
     } else {
         await message.send(`Poem titled "${title}" not found.`);
     }
 });
 
+// List All Poems Function ~V i Nㄷㅌ
 System({
     pattern: 'poems',
     fromMe: isPrivate,
@@ -51,6 +69,6 @@ System({
     if (titles.length > 0) {
         await message.send(`Available poems: ${titles.join(', ')}`);
     } else {
-        await message.send('*No poems have been added yet.*');
+        await message.send('No poems have been added yet.');
     }
 });
