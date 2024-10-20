@@ -1631,77 +1631,42 @@ const heroes = {
 };
 
 // MOBILE LEGENDS: BANG BANG PLUGIN
-
 System({
-
     pattern: 'ml ?(.*)', // Command pattern
-
     fromMe: isPrivate, // Restrict to private messages
-
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
-
     type: 'game', // Type of command
-
 }, async (message, match, m) => {
-
-    const query = match[1]; // User input after the command
-
+    const query = match[1].trim(); // User input after the command
     let response;
 
     if (query && heroes[query]) {
-
         const hero = heroes[query];
-
         response = `*Hero: ${query}*\n\n` +
-
             `Description: ${hero.description}\n` +
-
             `Role: ${hero.role}\n` +
-
-            `Specialities: ${hero.specialities.join(", ")}\n` +
-
+            `Specialities: ${hero.specialities.join(', ')}\n` +
             `Lane: ${hero.lane}\n` +
-
-            `Region: ${hero.region}\n` +
-
-
-
+            `Region: ${hero.region}\n\n` +
             `*Remember to always work as a team!*`;
-
     } else {
-
         response = `No information found for hero: ${query}. Please check the spelling or try another hero.`;
-
     }
 
     // Send the response
-
     await message.send(response);
-
 });
 
-// List heroes function (bulletin)
-
+// Bulletin feature to list all heroes
 System({
-
-    pattern: 'mlheros', // Command pattern for listing heroes
-
+    pattern: 'mlheroes', // Command pattern to list all heroes
     fromMe: isPrivate, // Restrict to private messages
-
-    desc: 'List all Mobile Legends: Bang Bang heroes',
-
+    desc: 'Get a list of Mobile Legends heroes',
     type: 'game', // Type of command
-
-}, async (message) => {
-
-    const heroNames = Object.keys(heroes).join(", "); // Get all hero names
-
-    const response = `*Available Heroes:*\n${heroNames}\n\n*Use "ml <hero_name>" for more information on a specific hero.*`;
-
+}, async (message, match, m) => {
+    const heroNames = Object.keys(heroes).join(', ');
+    const response = `Here is a list of available Mobile Legends heroes:\n\n${heroNames}`;
     
-
     // Send the response
-
     await message.send(response);
-
 });
