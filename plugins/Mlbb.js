@@ -1632,12 +1632,12 @@ const heroes = {
 
 // MOBILE LEGENDS: BANG BANG PLUGIN
 System({
-    pattern: 'ml ?(.*)', // Command pattern
+    pattern: /^ml\s+(.+)$/i, // Updated pattern to capture entire input after 'ml'
     fromMe: isPrivate, // Restrict to private messages
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
 }, async (message, match, m) => {
-    const query = match[1].trim(); // Trim spaces from the input
+    const query = match[1].trim(); // Ensure the full input after 'ml' is captured and trimmed
 
     if (!query) {
         await message.send('Please specify a hero name after the command.');
