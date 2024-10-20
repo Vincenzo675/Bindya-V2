@@ -1632,7 +1632,7 @@ const heroes = {
 
 // GET ML HERO INFORMATION COMMAND
 System({
-    pattern: /^getml\s+(.+)$/i, // Updated pattern to capture entire input after 'getml'
+    pattern: 'getml', // Updated pattern to capture entire input after 'getml'
     fromMe: isPrivate, // Restrict to private messages
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
@@ -1669,7 +1669,7 @@ System({
 
 // GET ML HERO LIST COMMAND
 System({
-    pattern: /^getml$/, // Pattern to list all heroes
+    pattern: 'getml', // Pattern to list all heroes
     fromMe: isPrivate, // Restrict to private messages
     desc: 'List all Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
