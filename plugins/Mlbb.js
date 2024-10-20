@@ -1637,29 +1637,31 @@ System({
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
 }, async (message, match, m) => {
-    const query = match[1].trim().toLowerCase(); // Get user input and make it lowercase
-    let response;
+    const query = match[1].trim().toLowerCase(); // Convert input to lowercase and trim extra spaces
 
-    // Find the hero by case-insensitive name
+    if (!query) {
+        await message.send('Please specify a hero name after the command.');
+        return;
+    }
+
+    // Find hero with case-insensitive matching
     const hero = Object.keys(heroes).find(h => h.toLowerCase() === query);
 
     if (hero) {
-        const heroData = heroes[hero]; // Get the hero's data
-        response = `*Hero: ${hero}*\n\n` +
+        const heroData = heroes[hero];
+        const response = `*Hero: ${hero}*\n\n` +
             `Description: ${heroData.description}\n` +
             `Role: ${heroData.role}\n` +
             `Specialities: ${heroData.specialities.join(', ')}\n` +
             `Lane: ${heroData.lane}\n` +
             `Region: ${heroData.region}\n\n` +
             `*Remember to always work as a team!*`;
+
+        await message.send(response);
     } else {
-        response = `No information found for hero: ${query}. Please check the spelling or try another hero.`;
+        await message.send(`No information found for hero: ${query}. Please check the spelling or try another hero.`);
     }
-
-    // Send the response
-    await message.send(response);
 });
-
 // Bulletin feature to list all heroes in a numbered format
 System({
     pattern: 'mlheroes', // Command pattern to list all heroes
