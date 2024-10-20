@@ -1630,27 +1630,25 @@ const heroes = {
     },
 };
 
-// GET ML HERO INFORMATION COMMAND
+// MOBILE LEGENDS: BANG BANG PLUGIN
 System({
-    pattern: 'getml', // Updated pattern to capture entire input after 'getml'
+    pattern: 'ml', // Updated pattern to capture entire input after 'ml'
     fromMe: isPrivate, // Restrict to private messages
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
 }, async (message, match, m) => {
-    // Ensure we have a match from the command
-    if (!match[1]) {
+    const query = match[1].trim(); // Ensure the full input after 'ml' is captured and trimmed
+
+    console.log(`Received query: "${query}"`); // Debugging line to see the received query
+
+    if (!query) {
         await message.send('Please specify a hero name after the command.');
         return;
     }
 
-    const query = match[1].trim(); // Ensure the full input after 'getml' is captured and trimmed
-
-    console.log(`Received query: "${query}"`); // Debugging line to see the received query
-
     // Find hero with exact case-insensitive matching
     const hero = Object.keys(heroes).find(h => h.toLowerCase() === query.toLowerCase());
 
-    // Check if the hero was found
     if (hero) {
         const heroData = heroes[hero];
         const response = `*Hero: ${hero}*\n\n` +
@@ -1666,15 +1664,16 @@ System({
         await message.send(`No information found for hero: ${query}. Please check the spelling or try another hero.`);
     }
 });
-
-// GET ML HERO LIST COMMAND
+// Bulletin feature to list all heroes in a numbered format
 System({
-    pattern: 'getml', // Pattern to list all heroes
+    pattern: 'mlheroes', // Command pattern to list all heroes
     fromMe: isPrivate, // Restrict to private messages
-    desc: 'List all Mobile Legends: Bang Bang heroes',
+    desc: 'Get a list of Mobile Legends heroes',
     type: 'game', // Type of command
 }, async (message, match, m) => {
-    const heroList = Object.keys(heroes).map((hero, index) => `${index + 1}. ${hero}`).join('\n');
-    const response = `Here are the names of the heroes:\n\n${heroList}`;
+    const heroNames = Object.keys(heroes).map((hero, index) => `${index + 1}. ${hero}`).join('\n');
+    const response = `Here are the names of the heroes:\n\n${heroNames}`;
+    
+    // Send the response
     await message.send(response);
 });
