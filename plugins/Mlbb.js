@@ -1637,17 +1637,20 @@ System({
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
 }, async (message, match, m) => {
-    const query = match[1].trim(); // User input after the command
+    const query = match[1].trim().toLowerCase(); // Get user input and make it lowercase
     let response;
 
-    if (query && heroes[query]) {
-        const hero = heroes[query];
-        response = `*Hero: ${query}*\n\n` +
-            `Description: ${hero.description}\n` +
-            `Role: ${hero.role}\n` +
-            `Specialities: ${hero.specialities.join(', ')}\n` +
-            `Lane: ${hero.lane}\n` +
-            `Region: ${hero.region}\n\n` +
+    // Find the hero by case-insensitive name
+    const hero = Object.keys(heroes).find(h => h.toLowerCase() === query);
+
+    if (hero) {
+        const heroData = heroes[hero]; // Get the hero's data
+        response = `*Hero: ${hero}*\n\n` +
+            `Description: ${heroData.description}\n` +
+            `Role: ${heroData.role}\n` +
+            `Specialities: ${heroData.specialities.join(', ')}\n` +
+            `Lane: ${heroData.lane}\n` +
+            `Region: ${heroData.region}\n\n` +
             `*Remember to always work as a team!*`;
     } else {
         response = `No information found for hero: ${query}. Please check the spelling or try another hero.`;
@@ -1657,15 +1660,15 @@ System({
     await message.send(response);
 });
 
-// Bulletin feature to list all heroes
+// Bulletin feature to list all heroes in a numbered format
 System({
     pattern: 'mlheroes', // Command pattern to list all heroes
     fromMe: isPrivate, // Restrict to private messages
     desc: 'Get a list of Mobile Legends heroes',
     type: 'game', // Type of command
 }, async (message, match, m) => {
-    const heroNames = Object.keys(heroes).join(', ');
-    const response = `Here is a list of available Mobile Legends heroes:\n\n${heroNames}`;
+    const heroNames = Object.keys(heroes).map((hero, index) => `${index + 1}. ${hero}`).join('\n');
+    const response = `Here are the names of the heroes:\n\n${heroNames}`;
     
     // Send the response
     await message.send(response);
