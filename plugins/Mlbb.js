@@ -1637,15 +1637,15 @@ System({
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
 }, async (message, match, m) => {
-    const query = match[1].trim().toLowerCase(); // Convert input to lowercase and trim extra spaces
+    const query = match[1].trim(); // Trim spaces from the input
 
     if (!query) {
         await message.send('Please specify a hero name after the command.');
         return;
     }
 
-    // Find hero with case-insensitive matching
-    const hero = Object.keys(heroes).find(h => h.toLowerCase() === query);
+    // Find hero with exact case-insensitive matching
+    const hero = Object.keys(heroes).find(h => h.toLowerCase() === query.toLowerCase());
 
     if (hero) {
         const heroData = heroes[hero];
