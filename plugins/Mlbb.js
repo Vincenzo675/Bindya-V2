@@ -1639,6 +1639,8 @@ System({
 }, async (message, match, m) => {
     const query = match[1].trim(); // Ensure the full input after 'ml' is captured and trimmed
 
+    console.log(`Received query: "${query}"`); // Debugging line to see the received query
+
     if (!query) {
         await message.send('Please specify a hero name after the command.');
         return;
