@@ -1627,48 +1627,6 @@ const heroes = {
 
         region: "Land of Dawn"
 
-    }, 
-  
-    "Zhuxin": {
-
-        description: "the Beacon of Spirits",
-
-        role: "Mage",
-
-        specialities: ["Damage", "Crowd Control"],
-
-        lane: ["Mid lane","Roaming"]
-
-        region: "Laboratory 1718"
-
-    },
-
-    "Suyou": {
-
-        description: "the Mask of the Immortal",
-
-        role: ["Fighter","Assassin"]
-
-        specialities: ["Chase", "Burst"],
-
-        lane: ["Jungling","EXP lane"]
-
-        region: "Cadia Riverlands"
-
-    },
-
-    "Lukas": {
-
-        description: "the Beast of Light",
-
-        role: "Fighter",
-
-        specialities: ["Regen", "Damage"],
-
-        lane: "EXP lane",
-
-        region: "Moniyan Empire"
-
     },
 };
 
