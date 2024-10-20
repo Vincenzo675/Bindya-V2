@@ -1,6 +1,8 @@
-//Queen Bindya - by ~V i Nㄷㅌ©
+// Queen Bindya - by ~V i Nㄷㅌ
+
 const { System, isPrivate } = require('../lib/');
 const fs = require('fs');
+
 const filePath = './poems.json'; // Path to store the poems
 
 // Function to load poems from the file ~V i Nㄷㅌ
@@ -29,12 +31,13 @@ System({
 }, async (message, match, m) => {
     const [title, ...contentParts] = match.split(':');
     const content = contentParts.join(':').trim();
-    
+
     if (!title || !content) {
         await message.send('Please use the format: addpoem <title>: <poem content>');
     } else {
         poemCollection[title.trim().toLowerCase()] = content;
         savePoems(poemCollection); // Save the updated poems to file
+        await m.react('✒️'); // React to the message
         await message.send(`Poem titled "${title.trim()}" added successfully.`);
     }
 });
@@ -48,11 +51,13 @@ System({
 }, async (message, match, m) => {
     const title = match.trim().toLowerCase();
     const poem = poemCollection[title];
-    
+
     if (poem) {
         const footer = "\n\n*~V i Nㄷㅌ*";
-        await message.send(` "*${title}*"\n\n${poem}${footer}`);
+        await m.react('✨'); // React to the message
+        await message.send(`"*${title}*"\n\n${poem}${footer}`);
     } else {
+        await m.react('❌'); // React to the message with an error
         await message.send(`Poem titled "${title}" not found.`);
     }
 });
@@ -65,12 +70,14 @@ System({
     type: 'poem',
 }, async (message, match, m) => {
     const titles = Object.keys(poemCollection);
-    
+
     if (titles.length > 0) {
         // Formatting the response like a bulletin ~V i Nㄷㅌ
         const bulletin = titles.map((title, index) => `\n${index + 1}. ${title.charAt(0).toUpperCase() + title.slice(1)}`).join('');
+        await m.react('📜'); // React to the message
         await message.send(`*Available Poems:*${bulletin}`);
     } else {
+        await m.react('❌'); // React to the message with an error
         await message.send('No poems have been added yet.');
     }
 });
