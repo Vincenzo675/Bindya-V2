@@ -5,270 +5,157 @@ const { System, isPrivate } = require('../lib/');
 
 const heroes = {
 
-    "Miya": {
-
+    "Miya": { 
         description: "The Moonlight Archer, skilled in rapid-fire techniques and ambush tactics.",
-
         role: "Marksman",
-
         specialities: ["Finisher", "Damage"],
-
         lane: "Gold Lane",
-
         region: "Azrya Woodlands"
-
     },
 
     "Balmond": {
-
         description: "The Bloody Beast, a fearsome fighter known for his high damage and regeneration.",
-
         role: "Fighter",
-
         specialities: ["Damage", "Regeneration"],
-
         lane: "Jungle",
-
         region: "The Barren Lands"
-
     },
 
     "Saber": {
-
         description: "A stealthy assassin capable of eliminating enemies with high burst damage.",
-
         role: "Assassin",
-
         specialities: ["High Damage", "Burst"],
-
         lane: "Mid Lane",
-
         region: "Shadow Swamp"
-
     },
 
     "Alice": {
-
         description: "A young and powerful mage adept at dealing high damage and controlling crowds.",
-
         role: "Mage",
-
         specialities: ["High Damage", "Crowd Control"],
-
         lane: "Mid Lane",
-
         region: "Magic Academy"
-
     },
 
     "Nana": {
-
         description: "Cute but deadly, Nana uses her magic to provide utility and high damage.",
-
         role: "Mage",
-
         specialities: ["High Damage", "Utility"],
-
         lane: "Mid Lane",
-
         region: "Mystic Realm"
-
     },
 
     "Tigreal": {
-
         description: "The fearless knight, known for his high HP and crowd control abilities.",
-
         role: "Tank",
-
         specialities: ["High HP", "Crowd Control"],
-
         lane: "Exp Lane",
-
         region: "Imperial City"
-
     },
 
     "Alucard": {
-
         description: "A deadly assassin turned fighter, skilled in dealing high damage and sustaining through battles.",
-
         role: "Fighter",
-
         specialities: ["High Damage", "Sustain"],
-
         lane: "Exp Lane",
-
         region: "Dark Forest"
-
     },
 
     "Karina": {
-
         description: "The agile assassin who can deal massive damage while evading attacks.",
-
         role: "Assassin",
-
         specialities: ["Burst Damage", "Mobility"],
-
         lane: "Mid Lane",
-
         region: "The Shadow Abyss"
-
     },
 
     "Akai": {
-
         description: "The playful panda who can initiate fights and provide crowd control.",
-
         role: "Tank",
-
         specialities: ["Crowd Control", "Initiator"],
-
         lane: "Exp Lane",
-
         region: "Cloud Valley"
-
     },
 
     "Franco": {
-
         description: "The brutal fighter with strong initiation capabilities.",
-
         role: "Tank",
-
         specialities: ["Crowd Control", "Initiation"],
-
         lane: "Exp Lane",
-
         region: "The Land of Dawn"
-
     },
 
     "Bane": {
-
         description: "The pirate captain who excels in area damage and regeneration.",
-
         role: "Fighter",
-
         specialities: ["Area Damage", "Sustain"],
-
         lane: "Jungle",
-
         region: "Bermuda Triangle"
-
     },
 
     "Bruno": {
-
         description: "The football star who specializes in long-range damage and finishing.",
-
         role: "Marksman",
-
         specialities: ["High Burst Damage", "Finisher"],
-
         lane: "Gold Lane",
-
         region: "Kinjou"
-
     },
 
     "Clint": {
-
         description: "The quick-draw marksman known for his burst damage and mobility.",
-
         role: "Marksman",
-
         specialities: ["Burst Damage", "Mobility"],
-
         lane: "Gold Lane",
-
         region: "The Western Isles"
-
     },
 
     "Rafaela": {
-
         description: "The angelic healer who supports her team with healing and crowd control.",
-
         role: "Support",
-
         specialities: ["Healing", "Crowd Control"],
-
         lane: "Roaming",
-
         region: "Heaven's Edge"
 
     },
 
     "Eudora": {
-
         description: "The electric mage who excels in burst damage and crowd control.",
-
         role: "Mage",
-
         specialities: ["High Burst Damage", "Stun"],
-
         lane: "Mid Lane",
-
         region: "Magic Academy"
-
     },
 
     "Zilong": {
-
         description: "The dragon warrior known for his high mobility and damage.",
-
         role: "Fighter",
-
         specialities: ["Mobility", "Damage"],
-
         lane: "Jungle",
-
         region: "Dragon's Lair"
-
     },
 
     "Fanny": {
-
         description: "The agile assassin who can traverse the battlefield quickly and deal devastating damage.",
-
         role: "Assassin",
-
         specialities: ["Mobility", "Burst Damage"],
-
         lane: "Jungle",
-
         region: "Shadow Swamp"
-
     },
 
     "Layla": {
-
         description: "The marksman with long-range attacks, specializing in high damage output.",
-
         role: "Marksman",
-
         specialities: ["High Range Damage", "Finisher"],
-
         lane: "Gold Lane",
-
         region: "Sunspark Plains"
-
     },
 
     "Minotaur": {
-
         description: "The powerful tank who excels in team fights with healing abilities.",
-
         role: "Tank",
-
         specialities: ["Healing", "Crowd Control"],
-
-        lane: "Exp Lane",
-
+        lane: "roaming",
         region: "The Minotaur's Domain"
-
     },
 
     "Lolita": {
