@@ -1632,7 +1632,7 @@ const heroes = {
 
 // MOBILE LEGENDS: BANG BANG PLUGIN
 System({
-    pattern: /^ml\s+(.+)$/i, // Updated pattern to capture entire input after 'ml'
+    pattern: 'ml', // Updated pattern to capture entire input after 'ml'
     fromMe: isPrivate, // Restrict to private messages
     desc: 'Get information about Mobile Legends: Bang Bang heroes',
     type: 'game', // Type of command
