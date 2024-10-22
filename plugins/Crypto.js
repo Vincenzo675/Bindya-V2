@@ -59,7 +59,7 @@ System({
 
 // List supported cryptos
 System({
-    pattern: 'crpts',
+    pattern: 'crps',
     fromMe: isPrivate,
     desc: 'Lists all supported cryptocurrencies',
     type: 'crypto',
