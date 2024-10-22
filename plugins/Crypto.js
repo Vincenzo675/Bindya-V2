@@ -18,12 +18,26 @@ async function fetchCryptoPrice(cryptoName) {
     }
 }
 
-// Supported cryptos list
-const supportedCryptos = ['bitcoin', 'ethereum', 'dogecoin', 'cardano', 'solana'];
+// Extended supported cryptos list, adding more popular cryptocurrencies
+const supportedCryptos = [
+    'bitcoin', 'ethereum', 'dogecoin', 'cardano', 'solana', 'binancecoin', 'ripple', 'polkadot', 'litecoin', 
+    'chainlink', 'stellar', 'vechain', 'theta-token', 'uniswap', 'aave', 'bitcoin-cash', 'tron', 'monero', 
+    'tezos', 'avalanche-2', 'shiba-inu', 'near', 'cosmos', 'algorand', 'ftx-token', 'fantom', 'decentraland', 
+    'elrond-erd-2', 'axie-infinity', 'sandbox', 'hedera-hashgraph', 'zilliqa', 'iota', 'harmony', 'pancakeswap', 
+    'curve-dao-token', 'kusama', 'gala', 'enjincoin', 'chiliz', 'thorchain', 'flow', 'quant-network', 
+    'arweave', 'the-graph', 'helium', 'ravencoin', 'icon', 'waves', 'celo', 'maker', 'synthetix-network-token', 
+    'terra-luna', 'filecoin', 'theta-fuel', 'neo', 'dydx', 'injective-protocol', 'dash', 'zencash', 
+    'compound-governance-token', '1inch', 'balancer', 'ren', 'loopring', 'toncoin', // Added more cryptos below
+    'aptos', 'hedera', 'internet-computer', 'klaytn', 'mina-protocol', 'bitget-token', 'optimism', 'rocket-pool',
+    'lido-dao', 'frax-share', 'injective-protocol', 'arbitrum', 'sui', 'conflux-token', 'floki', 'pepe',
+    'stargate-finance', 'ronin', 'synapse', 'space-id', 'hashflow', 'zkspace', 'eos', 'rose', 'multiversx',
+    'oasis-network', 'blur', 'gmx', 'hive', 'kadena', 'braintrust', 'ecomi', 'moonriver', 'marlin', 
+    'paris-saint-germain-fan-token', 'juventus-fan-token', 'og-fan-token', 'ac-milan-fan-token', 'as-roma-fan-token'
+];
 
 // Get crypto price by name
 System({
-    pattern: 'crypto ?(.*)',
+    pattern: 'crpt ?(.*)',
     fromMe: isPrivate,
     desc: 'Get real-time cryptocurrency price',
     type: 'crypto',
@@ -31,8 +45,7 @@ System({
     const cryptoName = match.trim().toLowerCase();
 
     if (!cryptoName || !supportedCryptos.includes(cryptoName)) {
-        const availableCryptos = supportedCryptos.join(', ');
-        return await message.send(`Please specify a valid cryptocurrency.\nSupported: ${availableCryptos}`);
+        return await message.send('Please specify a valid cryptocurrency.');
     }
 
     const price = await fetchCryptoPrice(cryptoName);
@@ -46,11 +59,11 @@ System({
 
 // List supported cryptos
 System({
-    pattern: 'cryptos',
+    pattern: 'crpts',
     fromMe: isPrivate,
-    desc: 'List supported cryptocurrencies',
+    desc: 'Lists all supported cryptocurrencies',
     type: 'crypto',
 }, async (message, match, m) => {
-    const availableCryptos = supportedCryptos.map((crypto) => crypto.charAt(0).toUpperCase() + crypto.slice(1)).join(', ');
-    await message.send(`💱 Supported Cryptocurrencies: ${availableCryptos}`);
+    const availableCryptos = supportedCryptos.map((crypto) => `• ${crypto.charAt(0).toUpperCase() + crypto.slice(1)}`).join('\n');
+    await message.send(`🌐 *Supported Cryptocurrencies:*\n\n${availableCryptos}`);
 });
