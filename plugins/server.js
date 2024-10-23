@@ -222,7 +222,7 @@ System({
     var commits = await git.log([Config.BRANCH + "..origin/" + Config.BRANCH,]);
     if (match == "now") {
         if (commits.total === 0) {
-            return await message.reply(`_Jarvis is on the latest version: v${version}_`);
+            return await message.reply(`_𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪 is on the latest version: v${version}_`);
         } else {
             if (server === "HEROKU") {
                 await updateBot(message);
@@ -238,9 +238,9 @@ System({
             }
         }
     } else if (commits.total === 0) {
-        return await message.send(`_Jarvis is on the latest version: v${version}_`);
+        return await message.send(`_𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪 is on the latest version: v${version}_`);
     } else {
-        var availupdate = "*Updates available for Jarvis-md* \n\n";
+        var availupdate = "*Updates available for 𝓠𝓾𝓮𝓮𝓷 𝓑𝓲𝓷𝓭𝔂𝓪* \n\n";
         commits["all"].map((commit, num) => {
             availupdate += num + 1 + " ●  " + commit.message + "\n";
         });
